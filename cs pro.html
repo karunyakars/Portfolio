@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(120deg, #000000, #000000);
+            color: #dfe6e9;
+        }
+
+        header {
+            padding: 1rem 2rem;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1E90FF;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1E90FF;
+            font-weight: bold;
+            margin-left: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #b2bec3;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1E90FF;
+            margin-bottom: 3rem;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .project-card {
+            background-color: rgba(31, 28, 28, 0.8);
+            border-radius: 15px;
+            padding: 1.5rem;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            color: #1E90FF;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: #dfe6e9;
+            margin-bottom: 1rem;
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #1E90FF;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .project-card a:hover {
+            background-color: #dfe6e9;
+        }
+
+        .dashboard {
+            margin: 3rem auto;
+            max-width: 800px;
+            background-color: rgba(31, 28, 28, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .dashboard canvas {
+            margin: 1.5rem auto;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #1E90FF; 
+            font-size: 0.8rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">My Portfolio</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="progress.html">Progress</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>Cybersecurity Projects</h1>
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3>Keylogger Enabled LMS Portal</h3>
+                <p>Developed a Keylogger-enabled LMS portal integrating keystroke monitoring with data logging, analysis, and alert generation for enhanced educational tracking.</p>
+                <a href="https://github.com/karunyakars/Cysec.git">View Project</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3>Email Spam Detection System</h3>
+                <p>Built a predictive model to detect email spam using machine learning algorithms like Naïve Bayes and support vector machines.</p>
+                <a href="https://www.linkedin.com/posts/karunya-l-s_machinelearning-datascience-spamdetection-activity-7281948843313700864-YIHO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD39ny8BU6nfW5GT8Gm2CKiIqe8_Or54hyU">View Project</a>
+            </div>
+
+        </div>
+
+        <div class="dashboard">
+            <h2 style="text-align:center; color:#1E90FF;">Cybersecurity Metrics Dashboard</h2>
+            <canvas id="threatsChart"></canvas>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; © 2025 My Portfolio | Karunya ❤️</p>
+    </footer>
+
+    <script>
+        const ctx = document.getElementById('threatsChart').getContext('2d');
+        const threatsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Spam Mails', 'Ham Mails'],
+                datasets: [{
+                    label: 'Number of detections',
+                    data: [45, 142],
+                    backgroundColor: ['#0984e3', '#00cec9'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

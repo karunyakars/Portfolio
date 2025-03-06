@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Progress</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script> <!-- Add for annotations -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: #1E90FF;
+        }
+
+        header {
+            padding: 1rem 2rem;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1E90FF;
+        }
+        
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #1E90FF;
+            font-weight: bold;
+            margin-left: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #dfe6e9;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .content h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1E90FF;
+        }
+
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .chart-card {
+            background-color: #181111;  /* Light grey theme for chart cards */
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            width: 300px;
+            text-align: center;
+        }
+
+        .chart-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1E90FF;
+        }
+        
+        
+        .dashboard-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .metric-card {
+            background-color: rgba(31, 28, 28, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            width: 100px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            margin: 1rem;
+        }
+
+        .metric-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+        }
+
+        .metric-card h3 {
+            font-size: 1.0rem;
+            color: #1E90FF;
+            margin-bottom: 1rem;
+        }
+
+        .metric-card p {
+            color: #dfe6e9;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #1E90FF; 
+            font-size: 0.8rem;
+        }
+
+        /* Style for filters */
+        .filters {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .filters select {
+            padding: 0.5rem;
+            margin-right: 1rem;
+            font-size: 1rem;
+            background-color: #1E90FF;
+            border: none;
+            border-radius: 5px;
+            color: black;
+        }
+
+        /* Style for data export button */
+        .export-btn {
+            padding: 0.5rem 1rem;
+            background-color: #1E90FF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .export-btn:hover {
+            background-color: #dfe6e9;
+        }
+
+        /* Style for project card */
+        .project-card {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: #ffffffee;
+            background-color: #1E90FF;
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s;
+        }
+
+        .project-card a:hover {
+            background-color: #dfe6e9 ;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">My Portfolio</div>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>My Progress</h1>
+        
+        <!-- Filters Section -->
+        <div class="filters">
+            <select id="techFilter">
+                <option value="all">All Technologies</option>
+                <option value="Python">Python</option>
+                <option value="Machine Learning">Machine Learning</option>
+                <option value="SQL">SQL</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Power BI">Power BI</option>
+            </select>
+            <select id="yearFilter">
+                <option value="all">All Years</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+            </select>
+            <button class="export-btn" onclick="exportData()">Export Data</button>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="chart-container">
+            <div class="chart-card">
+                <h2>Project Distribution</h2>
+                <canvas id="projectChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h2>Technologies Used</h2>
+                <canvas id="techChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h2>Knowledge gained Over Time</h2>
+                <canvas id="experienceChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Project Card Section -->
+        <div class="project-card">
+            <a href="project.html">View My Projects</a>
+        </div>
+    </div>
+    
+    
+    <footer>
+        <p>© 2025 My Portfolio | Karunya ❤️</p>
+    </footer>
+
+    <script>
+        // Data for Project Distribution
+        const projectData = {
+            labels: ['Data Science', 'Web Development', 'Machine Learning', 'Cybersecurity', 'Others'],
+            datasets: [{
+                label: 'Projects',
+                data: [8, 5, 6, 3, 4],
+                backgroundColor: ['#1E90FF', '#00cec9', '#6c5ce7', '#e17055', '#fdcb6e'],
+            }]
+        };
+
+        const techData = {
+            labels: ['Python', 'Machine Learning', 'SQL', 'Data Science', 'Power BI'],
+            datasets: [{
+                label: 'Technologies',
+                data: [15, 10, 8, 6, 5],
+                backgroundColor: ['#1E90FF', '#55efc4', '#ffeaa7', '#fab1a0', '#a29bfe'],
+            }]
+        };
+
+        const experienceData = {
+            labels: ['2021', '2022', '2023', '2024', '2025'],
+            datasets: [{
+                label: 'Knowledge gained %',
+                data: [20, 45, 60, 75, 80],
+                backgroundColor: '#fd79a8',
+                borderColor: '#d63031',
+                fill: true,
+            }]
+        };
+
+        // Initialize Charts
+        const projectChart = new Chart(document.getElementById('projectChart'), {
+            type: 'doughnut',
+            data: projectData,
+        });
+
+        const techChart = new Chart(document.getElementById('techChart'), {
+            type: 'bar',
+            data: techData,
+            options: {
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                },
+            },
+        });
+
+        const experienceChart = new Chart(document.getElementById('experienceChart'), {
+            type: 'line',
+            data: experienceData,
+            options: {
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                },
+            },
+        });
+
+        // Function to export data
+        function exportData() {
+            const data = {
+                projectData: projectData.datasets[0].data,
+                techData: techData.datasets[0].data,
+                experienceData: experienceData.datasets[0].data,
+            };
+
+            const blob = new Blob([JSON.stringify(data)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'data_export.json';
+            a.click();
+        }
+
+        // Filter data based on selection
+        document.getElementById('techFilter').addEventListener('change', function() {
+            const selectedTech = this.value;
+            updateTechChart(selectedTech);
+        });
+
+        document.getElementById('yearFilter').addEventListener('change', function() {
+            const selectedYear = this.value;
+            updateExperienceChart(selectedYear);
+        });
+
+        function updateTechChart(selectedTech) {
+            if (selectedTech === 'all') {
+                techChart.data.datasets[0].data = [15, 10, 8, 6, 5];
+            } else {
+                // Filter logic based on selected technology (example: filter data by selected technology)
+                const techDataFiltered = {
+                    'Python': [10, 0, 0, 0, 0],
+                    'Machine Learning': [0, 10, 0, 0, 0],
+                    'SQL': [0, 0, 8, 0, 0],
+                    'Data Science': [0, 0, 0, 6, 0],
+                    'Power BI': [0, 0, 0, 0, 5],
+                };
+                techChart.data.datasets[0].data = techDataFiltered[selectedTech] || techData.datasets[0].data;
+            }
+            techChart.update();
+        }
+
+        function updateExperienceChart(selectedYear) {
+            if (selectedYear === 'all') {
+                experienceChart.data.datasets[0].data = [20, 45, 60, 75, 80];
+            } else {
+                // Update data based on selected year (example)
+                const experienceDataFiltered = {
+                    '2021': [20, 0, 0, 0, 0],
+                    '2022': [0, 45, 0, 0, 0],
+                    '2023': [0, 0, 60, 0, 0],
+                    '2024': [0, 0, 0, 75, 0],
+                    '2025': [0, 0, 0, 0, 80],
+                };
+                experienceChart.data.datasets[0].data = experienceDataFiltered[selectedYear] || experienceData.datasets[0].data;
+            }
+            experienceChart.update();
+        }
+    </script>
+</body>
+</html>
+

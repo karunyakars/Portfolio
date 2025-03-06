@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #000000; /* Black background */
+            color: #1E90FF; /* Neon Blue */
+        }
+
+        header {
+            padding: 1rem 2rem;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1E90FF; /* Neon Blue */
+        }
+
+        nav a {
+            text-decoration: none;
+            color:#1E90FF;
+            font-weight: bold;
+            margin-left: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #dfe6e9; /* Neon Blue */
+        }
+
+        .content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1E90FF; /* Neon Blue */
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+        .description {
+            font-size: 1.0rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+            color: #f0f0f0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 1.5rem;
+            max-width: 500px; /* Reduced card size */
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            border: none;
+            background-color: #333; /* Darker grey */
+            color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border: 2px solid #1E90FF; /* Neon Blue */
+            box-shadow: 0 0 10px #1E90FF;
+        }
+
+        .contact-form button {
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            color: #000;
+            background-color: #1E90FF;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(30, 144, 255, 0.6);
+        }
+
+        .contact-form button:hover {
+            background-color: #00BFFF; /* Lighter Neon Blue */
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #1E90FF; 
+            font-size: 0.8rem;
+        }
+
+        footer p {
+            color: #1E90FF;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">My Portfolio</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>Let's Connect!</h1>
+
+        <div class="description">
+            <p>
+                "I love collaborating with different communities to create impactful solutions. Looking to connect with kindred spirits— Let’s join hands and bring our ideas to life!"
+            </p>
+        </div>
+
+        <h2 style="color: #1E90FF;">Contact Me</h2>
+        <div class="contact-form">
+            <form action="submit_contact_form.php" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p> © 2025 My Portfolio | Karunya ❤️</p>
+    </footer>
+
+</body>
+</html>

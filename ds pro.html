@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(120deg, #000000, #000000);
+            color: #dfe6e9;
+        }
+
+        header {
+            padding: 1rem 2rem;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1E90FF;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1E90FF;
+            font-weight: bold;
+            margin-left: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #b2bec3;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1E90FF;
+            margin-bottom: 3rem;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .project-card {
+            background-color: rgba(31, 28, 28, 0.8);
+            border-radius: 15px;
+            padding: 1rem;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            margin: 0.5rem;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+        }
+
+
+        .project-card h3 {
+            font-size: 1.1rem;
+            color: #1E90FF;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: #dfe6e9;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #0984e3;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .project-card a:hover {
+            background-color: #dfe6e9;
+        }
+        
+        .dashboard-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .metric-card {
+            background-color: rgba(31, 28, 28, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            width: 100px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            margin: 1rem;
+        }
+
+        .metric-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+        }
+
+        .metric-card h3 {
+            font-size: 1.1rem;
+            color: #1E90FF;
+            margin-bottom: 1rem;
+        }
+
+        .metric-card p {
+            color: #dfe6e9;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #1E90FF; 
+            font-size: 0.8rem;
+        }
+
+    
+      
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">My Portfolio</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="progress.html">Progress</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>Data Science Projects</h1>
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3>IMDb Movie Prediction </h3>
+                <p>Built a predictive model to predict IMDb movie ratings using machine learning algorithms like regression.</p>
+                <a href="https://www.linkedin.com/posts/karunya-l-s_datascience-machinelearning-imdb-activity-7219386345402560518-FNTr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD39ny8BU6nfW5GT8Gm2CKiIqe8_Or54hyU">View Project</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3>IRIS Flower Prediction</h3>
+                <p>Built a predictive model to classify IRIS flower species using machine learning algorithms like decision trees and SVM.</p>
+                <a href="https://www.linkedin.com/posts/karunya-l-s_datascience-machinelearning-dataanalysis-activity-7219556108217012225-dQxd?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD39ny8BU6nfW5GT8Gm2CKiIqe8_Or54hyU">View Project</a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <h3>Sales Prediction</h3>
+                <p>Built a predictive model to forecast future sales using machine learning algorithms like linear regression and decision trees.</p>
+                <a href="https://www.linkedin.com/posts/karunya-l-s_datascience-machinelearning-salesprediction-activity-7220278491106197504-cazJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD39ny8BU6nfW5GT8Gm2CKiIqe8_Or54hyU">View Project</a>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <h3>Credit Card Fraud Detection</h3>
+                <p>Built a machine learning model to detect fraudulent credit card transactions using anomaly detection and classification algorithms.</p>
+                <a href="https://www.linkedin.com/posts/karunya-l-s_my-journey-through-the-credit-card-fraud-activity-7221317139595509762-00o3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD39ny8BU6nfW5GT8Gm2CKiIqe8_Or54hyU">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Titanic Survival Prediction</h3>
+                <p>Built a predictive model to predict Titanic passenger survival using machine learning algorithms like logistic regression and random forests.</p>
+                <a href="https://www.linkedin.com/posts/karunya-l-s_datascience-machinelearning-titanicprediction-activity-7303420347947569152-5g1T?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD39ny8BU6nfW5GT8Gm2CKiIqe8_Or54hyU">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>PowerBI Dashboard</h3>
+                <p>Created a PowerBI dashboard to analyze dairy product sales, trends, and customer insights using interactive visualizations.</p>
+                <a href="PowerBI.jpeg">View Project</a>
+            </div>
+            
+            <div class="content">
+                <h1>Data Science Metrics Dashboard</h1>
+                <div class="dashboard-container">
+                    <!-- Technologies or Skills -->
+                    <div class="metric-card">
+                        <h3>Technologies & Skills</h3>
+                        <p>Python, SQL, Machine Learning, Data Visualization</p>
+                    </div>
+        
+                    <!-- Tools Used -->
+                    <div class="metric-card">
+                        <h3>Tools Used</h3>
+                        <p>Power BI, Excel,Visual Studio Code, GitHub</p>
+                    </div>
+        
+                    <!-- Analyzed Datasets -->
+                    <div class="metric-card">
+                        <h3>Analyzed Datasets</h3>
+                        <p>5+ Datasets </p>
+                    </div>
+        
+                    <!-- Time Spent -->
+                    <div class="metric-card">
+                        <h3>Time Spent</h3>
+                        <p>100+ Hours</p>
+                    </div>
+        
+                    <!-- Knowledge Gained -->
+                    <div class="metric-card">
+                        <h3>Knowledge Gained</h3>
+                        <p>80%</p>
+                    </div>
+                </div>
+        
+            </div>
+        
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 My Portfolio | Karunya ❤️</p>
+    </footer>
+    
+
+</body>
+</html>

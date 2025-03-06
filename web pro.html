@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: black;
+            color: #dfe6e9;
+        }
+
+        header {
+            padding: 1rem 2rem;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1E90FF;
+        }
+
+        nav a {
+            text-decoration: none;
+            color:#1E90FF ;
+            font-weight: bold;
+            margin-left: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #c2d3e4;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1E90FF;
+            margin-bottom: 3rem;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .project-card {
+            background-color: rgba(31, 28, 28, 0.8);
+            border-radius: 15px;
+            padding: 1.5rem;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            color: #1E90FF;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: #dfe6e9;
+            margin-bottom: 1rem;
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #0984e3;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .project-card a:hover {
+            background-color: #dfe6e9;
+        }
+
+        .dashboard {
+            margin: 4rem auto;
+            max-width: 1000px; /* Increased max-width */
+            background-color: rgba(31, 28, 28, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .dashboard canvas {
+            margin: 1.5rem auto;
+            display: block;
+            width: 40%; /* Ensure it takes full container width */
+            height: 200px; /* Increased height */
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #1E90FF; 
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">My Portfolio</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="progress.html">Progress</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>Web Development Projects</h1>
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3>LMS Portal</h3>
+                <p>Developed an LMS portal with features like student and tutor login, course management, assignments, and real-time progress tracking using web technologies.</p>
+                <a href="https://github.com/karunyakars/Cysec.git">View Project</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>Designed a personal portfolio website showcasing my skills, projects, and achievements, built with HTML, CSS, and JavaScript.</p>
+                <a href="portfolio-website.html">View Project</a>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <h2 style="text-align:center; color:#1E90FF;">Web Development Stats Dashboard</h2>
+            <canvas id="webDevChart"></canvas>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; © 2025 My Portfolio | Karunya ❤️</p>
+    </footer>
+
+    <script>
+        const ctx = document.getElementById('webDevChart').getContext('2d');
+        const webDevChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Frontend', 'Backend', 'Deployment'],
+                datasets: [{
+                    label: 'Hours Spent on Web Development Projects',
+                    data: [30, 18, 30],
+                    backgroundColor: ['#0984e3', '#6c5ce7', '#fdcb6e'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Home</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* Black background */
+            color: #1E90FF; /* Neon Blue */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1E90FF; /* Neon Blue */
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1E90FF; /* Neon Blue */
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            color: #dfe6e9; /* Lighter Neon Blue */
+            transform: scale(1.1);
+        }
+
+        .content {
+            display: flex;
+            justify-content: center; /* Centers the text and image horizontally */
+            align-items: center; /* Aligns the items vertically */
+            gap: 2rem; /* Space between the text and image */
+            padding: 2rem;
+            height: calc(100vh - 5rem); /* Full screen height minus header and padding */
+        }
+
+        .content-left {
+            max-width: 50%;
+            text-align: left;
+        }
+
+        .content-left h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1E90FF; /* Neon Blue */
+            
+        }
+
+        .content-left p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            color: #B0E0E6; /* Light Blue for readability */
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            color: #000;
+            background-color: #1E90FF;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            text-transform: uppercase;
+            
+        }
+
+        .btn:hover {
+            background-color: #00BFFF; /* Lighter Neon Blue */
+            transform: scale(1.05);
+        }
+
+        .profile {
+            flex: 0 0 auto; /* Prevent shrinking */
+            text-align: center;
+        }
+
+        .profile img {
+            width: 300px;
+            height: 400px;
+            object-fit: cover; /* Ensures the image maintains proportions */
+            border-radius: 15px; /* Add slightly rounded corners */
+            border: 4px solid #1E90FF; /* Neon Blue Border */
+            
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #1E90FF; 
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">My Portfolio</div>
+        <nav>
+            <a href="about.html">About Me</a>
+            <a href="progress.html">Progress</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="content-left" id="about-me">
+            <h1>Welcome to My Portfolio</h1>
+
+
+            <h2>Hii this is Karunya.... </h2>
+                
+            <p>
+                             I'm an aspiring data analyst passionate about working with communities 
+                and delivering impactful solutions. Explore my journey, skills, and works 
+                in AI, Data Science, and Cybersecurity.
+            </p>
+            <button class="btn" onclick="location.href='about.html'">Check out my stuff</button>
+        </div>
+        <div class="profile">
+            <img src="images/formal_profile.jpeg" alt="Your Profile Picture">
+        </div>
+    </div>
+
+    <footer>
+        © 2025 My Portfolio | Karunya ❤️
+    </footer>
+</body>
+</html>

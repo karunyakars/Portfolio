@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: #fff;
+        }
+
+        header {
+            padding: 1rem 2rem;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1E90FF;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1E90FF;
+            font-weight: bold;
+            margin-left: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #dfe6e9;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .content h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1E90FF;
+        }
+
+        .project-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .project-card {
+            background-color: rgba(31, 28, 28, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            width: 300px; /* Increased card size */
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card h2 {
+            font-size: 1.5rem;
+            color: #1E90FF; /* Neon blue color */
+            margin-bottom: 1rem;
+        }
+
+        /* Updated link color for "Explore" */
+        .project-card a {
+            text-decoration: none;
+            color:#1E90FF ; /* Changed the color to Tomato */
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .project-card a:hover {
+            color: #dfe6e9; /* Color change on hover */
+        }
+        
+        /* Creative Dashboard Styles */
+        .dashboard {
+            background-color: rgba(31, 28, 28, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 3rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .dashboard h2 {
+            color: #1E90FF;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .dashboard-stats {
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background-color: rgba(31, 28, 28, 0.9);
+            padding: 1.5rem;
+            border-radius: 10px;
+            width: 180px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .stat-card h3 {
+            color: #1E90FF;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            color: #dfe6e9;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #1E90FF; 
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">My Portfolio</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="progress.html">Progress</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>My Projects</h1>
+        <div class="project-list">
+            <!-- Example of Project Cards -->
+            <div class="project-card">
+                <h2>Data Science Projects</h2>
+                <p>Explore various data science projects I have worked on, including data analysis, visualization, and machine learning.</p>
+                <a href="ds pro.html">Explore</a>
+            </div>
+            <div class="project-card">
+                <h2>Cybersecurity Projects</h2>
+                <p>Check out my Cybersecurity projects, showcasing threat analysis and detection technologies.</p>
+                <a href="cs pro.html">Explore</a>
+            </div>
+            <div class="project-card">
+                <h2>Web Development Projects</h2>
+                <p>Check out my Web development projects, showcasing my works on creative and interactive web pages.</p>
+                <a href="web pro.html">Explore</a>
+            </div>
+            
+            <!-- Creative Dashboard Section -->
+            <div class="dashboard">
+                <h2> Project Stats Dashboard</h2>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <h3>Total Projects</h3>
+                        <p>12</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Completed Projects</h3>
+                        <p>9</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Ongoing Projects</h3>
+                        <p>3</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        © 2025 My Portfolio | Karunya ❤️
+    </footer>
+</body>
+</html>
